@@ -147,4 +147,17 @@ document.getElementById("chatInput").addEventListener("keydown",e=>{if(e.key==="
 
 render();renderChat();
 </script>
-</body></html>
+</body>
+  
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch((error) => {
+        console.error("PlayHub service worker registration failed:", error);
+      });
+  });
+}
+</script>
+
+</html>
